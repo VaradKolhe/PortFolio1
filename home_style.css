@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    font-family: Arial;
+    border: border-box;
+}
+.cursor{
+    cursor: pointer;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(0,0,30,0.6);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2% 0 5%;
+    backdrop-filter: blur(15px);
+    transition: background-color 500ms ease-in-out;
+    z-index: 100;
+}
+.navbar.scrolled{
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(15px);
+    transition: background-color 300ms ease-in-out;
+}
+.portfolio-icon{
+    background-image: linear-gradient(to right bottom, #ae0ac0, rgb(3, 91, 178)) ;
+    background-clip: text;
+    color: transparent;
+    font-size: 2em;
+}
+.navigation-section{
+    height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.14em;
+    padding: 0 5%;
+    width: 550px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fafafa;
+    gap: 5px;
+    justify-content: space-evenly;
+}
+.navbar-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: max-content;
+    transition: 200ms;
+    height: 100%;
+}
+.navbar-icons:hover{
+    background-image: linear-gradient(to right, #e600ff, rgb(3, 101, 199));
+    background-clip: text;
+    color: transparent;
+}
+.navbar-icons::after{
+    content: '';
+    background: linear-gradient(to right, #e600ff, rgb(3, 101, 199));
+    height: 4px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    transition: 200ms;
+}
+.navbar-icons:hover::after{
+    width: 100%;
+}
+.navbar-icons a{
+    text-decoration: none;
+    color: #dfdede;
+    display: inline-block;
+    transition: color 200ms;
+}
+.navbar-icons:hover a{
+    background-image: linear-gradient(to right, #e600ff, rgb(3, 101, 199));
+    background-clip: text;
+    color: transparent;
+}
+.home-section{
+    background-image: url('photos/Purplebackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+}
+.inside-top-section{
+    top: -10vh;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 5%;
+    overflow: hidden;
+}
+.image-section img {
+    max-width: 100%;
+    height: 100%;
+    display: block;
+}
+.glass{
+    width: clamp(30%, 800px, 70%);
+    min-height: auto;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;  
+    flex-direction: column;
+    background-color: rgba(225,225,225,0.1);
+    backdrop-filter: blur(25px);
+    border-radius: 20px;
+    gap: 50px;
+    padding: 20px;
+    border: rgba(255,255,255,0.5) solid 2px;
+    box-shadow: 12px 12px 12px rgba(0,0,30,0.5),
+                -12px -12px 12px rgba(255,255,255,0.06);
+}
+.glass h1{
+    font: sans-serif;
+    font-size: 2.7em;
+    background-image: linear-gradient(to right, #b6b6b6, rgb(0, 255, 255));
+    background-clip: text;
+    color: transparent;
+}
+.content{
+    font-size: 1.18em;
+    color: #dfdede;
+}
+.link-icons{
+    width:10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.icon{
+    background: #b6b6b6;
+    padding: 10px;
+    color: green;
+    border: 10px;
+    border-radius: 100pc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 200ms;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 5%;
+    }
+    .portfolio-icon {
+        margin-bottom: 10px;
+    }
+    .navigation-section {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+    .inside-top-section{
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-section{
+        height: 250px;
+        width: 250px;
+        border-radius: 50px;
+    }
+    .navbar-icons:hover{
+        background-image: linear-gradient(to right, #e600ff, rgb(3, 101, 199));
+        background-clip: text;
+        color: transparent;
+    }
+    .home-section{
+        background-image: url('photos/Purplebackground.jpg');
+        background-size: cover;
+        min-height: 90vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    .navbar-icons::after{
+        content: '';
+        background: linear-gradient(to right, #e600ff, rgb(3, 101, 199));
+        height: 4px;
+        width: 0;
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        transition: 200ms;
+    }
+    .navbar-icons:hover::after{
+        width: 100%;
+    }
+}
